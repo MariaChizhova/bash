@@ -1,0 +1,24 @@
+#!/bin/bash
+
+PAPKA=$1
+ARCHIV=$2
+
+shift 2
+
+mkdir $PAPKA
+
+for TYPE in "$@"
+do
+i=0
+for FILE in $(find ~/ -name "*.$TYPE")
+do
+i=$(($i+1))
+FILENAME=$(basename "$FILE" ".$TYPE")
+cp "$FILE" ./$PAPKA/$FILENAME"(backup#$i)".$TYPE;
+
+done
+done
+
+tar -czf $ARCHIV.tar.gz ./$PAPKA
+
+echo "done"
