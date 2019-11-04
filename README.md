@@ -1,2 +1,3 @@
 # bash
-Необходимо создать bash-скрипт, который будет бэкапить все файлы с кодом, которые лежат не выше домашнего каталога текущего пользователя.
+
+A bash script that backs up all files with code that are no higher than the current user's home directory.
